@@ -2,16 +2,18 @@
 
     |   █▀▀ █▀█ █░░ █▀█ █▀█   █░░ █ █▄▄ █▀█ ▄▀█ █▀█ █▄█
     |   █▄▄ █▄█ █▄▄ █▄█ █▀▄   █▄▄ █ █▄█ █▀▄ █▀█ █▀▄ ░█░
-    ||  Module version: v1.2.0 - Build 2
+    ||  Module version: v1.3.0
     firework | user interface on command prompt or terminal
     >> SupTan!
 ]]
 
-local color = {}
+local color = {_VERSION = "1.3.0"}
 local STYLE = {
     RESET = "\27[0m",
     BOLD = "\27[1m",
-    UNDERLINE = "\27[4m"
+    ITALIC = "\27[3m",
+    UNDERLINE = "\27[4m",
+    STRIKETHROUGH = "\27[9m"
 }
 
 local COLORS = {
@@ -22,7 +24,6 @@ local COLORS = {
     MAGENTA = "\27[35m",
     CYAN = "\27[36m",
     WHITE = "\27[37m"
-    
 }
 
 local BG_COLORS = {
@@ -66,8 +67,16 @@ function color.bold(text)
     return STYLE.BOLD..text..STYLE.RESET
 end
 
+function color.italic(text)
+    return STYLE.ITALIC..text..STYLE.RESET
+end
+
 function color.underline(text)
     return STYLE.UNDERLINE..text..STYLE.RESET
+end
+
+function color.strikethrough(text)
+    return STYLE.STRIKETHROUGH..text..STYLE.RESET
 end
 
 return color

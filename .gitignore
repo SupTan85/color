@@ -1,0 +1,5 @@
+# ignore windows config and debug file
+desktop.ini
+
+# ignore temp folder
+.lh
